@@ -1,0 +1,22 @@
+{
+    "name": "Mooc",
+    "version": "1.0",
+    "manifest_version": 2,
+    "browser_action": {
+        "default_title": "图谱",
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://www.coursera.org/learn/machine-learning/lecture/*/*"],
+            "js": ["jquery-2.1.4.min.js","mooc.js"],
+            "run_at": "document_end"
+        }
+    ],
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "web_accessible_resources": ["inject.js"],
+    "permissions": ["tabs", "activeTab"]  
+}
